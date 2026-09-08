@@ -1,0 +1,17 @@
+# communication_channels — Incoming installed contributions
+
+[Back to module index](index.md)
+
+## Incoming installed contributions
+
+| Contributor | Kind | Target | Resolution | Activation | Contribution · Source |
+|---|---|---|---|---|---|
+| channel_apns | data-table | widget-spot:data-table:communication_channels.channels:toolbar @communication_channels | bound | widget-spot:data-table:communication_channels.channels:toolbar:widget-injection-consumer | channel_apns.injection.connect@data-table:communication_channels.channels:toolbar · [node_modules/@open-mercato/channel-apns/src/modules/channel_apns/widgets/injection-table.ts](../../../../node_modules/@open-mercato/channel-apns/src/modules/channel_apns/widgets/injection-table.ts) |
+| channel_expo | data-table | widget-spot:data-table:communication_channels.channels:toolbar @communication_channels | bound | widget-spot:data-table:communication_channels.channels:toolbar:widget-injection-consumer | channel_expo.injection.connect@data-table:communication_channels.channels:toolbar · [node_modules/@open-mercato/channel-expo/src/modules/channel_expo/widgets/injection-table.ts](../../../../node_modules/@open-mercato/channel-expo/src/modules/channel_expo/widgets/injection-table.ts) |
+| channel_fcm | data-table | widget-spot:data-table:communication_channels.channels:toolbar @communication_channels | bound | widget-spot:data-table:communication_channels.channels:toolbar:widget-injection-consumer | channel_fcm.injection.connect@data-table:communication_channels.channels:toolbar · [node_modules/@open-mercato/channel-fcm/src/modules/channel_fcm/widgets/injection-table.ts](../../../../node_modules/@open-mercato/channel-fcm/src/modules/channel_fcm/widgets/injection-table.ts) |
+| channel_gmail | widget | widget-spot:profile:communication-channels:connect @communication_channels | bound | widget-spot:profile:communication-channels:connect:widget-injection-consumer | channel_gmail.injection.connect@profile:communication-channels:connect · [node_modules/@open-mercato/channel-gmail/src/modules/channel_gmail/widgets/injection-table.ts](../../../../node_modules/@open-mercato/channel-gmail/src/modules/channel_gmail/widgets/injection-table.ts) |
+| channel_imap | widget | widget-spot:profile:communication-channels:connect @communication_channels | bound | widget-spot:profile:communication-channels:connect:widget-injection-consumer | channel_imap.injection.connect@profile:communication-channels:connect · [node_modules/@open-mercato/channel-imap/src/modules/channel_imap/widgets/injection-table.ts](../../../../node_modules/@open-mercato/channel-imap/src/modules/channel_imap/widgets/injection-table.ts) |
+| customers | subscriber | event:communication_channels.message.received @communication_channels | capability-only | — | customers:link-channel-message-received · [node_modules/@open-mercato/core/src/modules/customers/subscribers/link-channel-message-received.ts](../../../../node_modules/@open-mercato/core/src/modules/customers/subscribers/link-channel-message-received.ts) |
+| customers | subscriber | event:communication_channels.message.sent @communication_channels | capability-only | — | customers:link-channel-message-sent · [node_modules/@open-mercato/core/src/modules/customers/subscribers/link-channel-message-sent.ts](../../../../node_modules/@open-mercato/core/src/modules/customers/subscribers/link-channel-message-sent.ts) |
+
+<!-- end module facts section: communication_channels/incoming-installed-contributions -->

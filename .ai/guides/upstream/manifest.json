@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "generator": "create-mercato-app@0.7.0",
+  "files": {
+    "AGENTS.md": "1f54610cebc4fd7e42b56d1c18859edc7ed7d3165c9af72c4530b6feaf76e457",
+    "BACKWARD_COMPATIBILITY.md": "d2fdc675a9c86cab32ab024dae29f45717f441ddc305329c056fb66c5b498c27"
+  }
+}

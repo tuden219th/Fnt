@@ -1,0 +1,21 @@
+# dashboards — UMES contributions
+
+[Back to module index](index.md)
+
+## UMES contributions
+
+| ID | Kind | Target | Phase / operations | Contract | Resolution | Source |
+|---|---|---|---|---|---|---|
+| dashboards:invalidate-widget-data-on-currency-change | subscriber | currencies.currency.* | before-or-after | event=currencies.currency.*; persistent=false; subscriberId=dashboards:invalidate-widget-data-on-currency-change; sync=true | pattern | [subscribers/invalidateWidgetDataCache.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/subscribers/invalidateWidgetDataCache.ts) |
+| dashboard:dashboards.analytics.aovKpi | widget | dashboard:dashboards.analytics.aovKpi | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.aovKpi | framework | [widgets/dashboard/aov-kpi/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/aov-kpi/widget.ts) |
+| dashboard:dashboards.analytics.newCustomersKpi | widget | dashboard:dashboards.analytics.newCustomersKpi | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.newCustomersKpi | framework | [widgets/dashboard/new-customers-kpi/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/new-customers-kpi/widget.ts) |
+| dashboard:dashboards.analytics.ordersByStatus | widget | dashboard:dashboards.analytics.ordersByStatus | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.ordersByStatus | framework | [widgets/dashboard/orders-by-status/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/orders-by-status/widget.ts) |
+| dashboard:dashboards.analytics.ordersKpi | widget | dashboard:dashboards.analytics.ordersKpi | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.ordersKpi | framework | [widgets/dashboard/orders-kpi/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/orders-kpi/widget.ts) |
+| dashboard:dashboards.analytics.pipelineSummary | widget | dashboard:dashboards.analytics.pipelineSummary | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.pipelineSummary | framework | [widgets/dashboard/pipeline-summary/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/pipeline-summary/widget.ts) |
+| dashboard:dashboards.analytics.revenueKpi | widget | dashboard:dashboards.analytics.revenueKpi | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.revenueKpi | framework | [widgets/dashboard/revenue-kpi/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/revenue-kpi/widget.ts) |
+| dashboard:dashboards.analytics.revenueTrend | widget | dashboard:dashboards.analytics.revenueTrend | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.revenueTrend | framework | [widgets/dashboard/revenue-trend/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/revenue-trend/widget.ts) |
+| dashboard:dashboards.analytics.salesByRegion | widget | dashboard:dashboards.analytics.salesByRegion | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.salesByRegion | framework | [widgets/dashboard/sales-by-region/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/sales-by-region/widget.ts) |
+| dashboard:dashboards.analytics.topCustomers | widget | dashboard:dashboards.analytics.topCustomers | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.topCustomers | framework | [widgets/dashboard/top-customers/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/top-customers/widget.ts) |
+| dashboard:dashboards.analytics.topProducts | widget | dashboard:dashboards.analytics.topProducts | — | executionGuard=both; payload=dashboard; registryKey=dashboards.analytics.topProducts | framework | [widgets/dashboard/top-products/widget.ts](../../../../node_modules/@open-mercato/core/src/modules/dashboards/widgets/dashboard/top-products/widget.ts) |
+
+<!-- end module facts section: dashboards/umes-contributions -->
