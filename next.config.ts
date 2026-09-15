@@ -59,9 +59,7 @@ const nextConfig: NextConfig & { agentRules?: boolean } = {
     'esbuild',
     '@esbuild/darwin-arm64',
     '@open-mercato/cli',
-    // `pdfjs-dist` must be bundled into the server output on Vercel so
-    // runtime `require('pdfjs-dist/package.json')` can resolve. Do not
-    // externalize it here.
+    'pdfjs-dist',
     // Telemetry: the OTEL SDK + instrumentations must run as real Node modules,
     // not be bundled — the auto-instrumentations (pg/undici) monkey-patch the
     // underlying drivers at runtime. The full list is owned by
@@ -69,8 +67,15 @@ const nextConfig: NextConfig & { agentRules?: boolean } = {
     // "emits nothing") copy.
     ...telemetryServerExternalPackages,
   ],
-  // Mirror server-only env vars that client components must observe. Keep this
-  // list minimal — anything added here is inlined into the client bundle.
+
+  // FIX: force pdfjs-dist into the Vercel server output.
+  // @open-mercato/core resolves pdfjs-dist/package.json at runtime.
+  outputFileTracingIncludes: {
+    '*': [
+      './node_modules/pdfjs-dist/**/*',
+    ],
+  },
+
   env: {
     OM_SEARCH_MIN_LEN: process.env.OM_SEARCH_MIN_LEN,
   },
@@ -87,9 +92,6 @@ const nextConfig: NextConfig & { agentRules?: boolean } = {
         ],
       },
       {
-        // Attachment file downloads set their own restrictive CSP (sandbox)
-        // in the route handler — override the global app CSP so it is not
-        // replaced at the Next.js config layer.
         source: '/api/attachments/file/:path*',
         headers: [
           { key: 'Content-Security-Policy', value: "default-src 'none'; sandbox" },
@@ -99,10 +101,6 @@ const nextConfig: NextConfig & { agentRules?: boolean } = {
         ],
       },
       {
-        // Marker header consumed by the custom-domain DNS reverse-resolve check
-        // (see SPEC 2026-04-08-portal-custom-domain-routing). Lets the verifier
-        // tell "request reached our origin" from "request was answered by an
-        // unrelated host that proxied it through Cloudflare/Fastly".
         source: '/_next/health',
         headers: [{ key: originHeaderName, value: '1' }],
       },
