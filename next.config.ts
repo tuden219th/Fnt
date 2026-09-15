@@ -59,7 +59,9 @@ const nextConfig: NextConfig & { agentRules?: boolean } = {
     'esbuild',
     '@esbuild/darwin-arm64',
     '@open-mercato/cli',
-    'pdfjs-dist',
+    // `pdfjs-dist` must be bundled into the server output on Vercel so
+    // runtime `require('pdfjs-dist/package.json')` can resolve. Do not
+    // externalize it here.
     // Telemetry: the OTEL SDK + instrumentations must run as real Node modules,
     // not be bundled — the auto-instrumentations (pg/undici) monkey-patch the
     // underlying drivers at runtime. The full list is owned by
